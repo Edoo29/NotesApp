@@ -1,3 +1,5 @@
+"use server"
+
 import { cookies } from "next/headers";
 import { cache } from "react";
 import { lucia } from "./auth";
@@ -34,7 +36,7 @@ export const validateRequest = cache(
           sessionCookie.attributes
         );
       }
-    } catch {}
+    } catch { }
     return result;
   }
 );

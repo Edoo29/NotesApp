@@ -7,8 +7,9 @@ import { redirect } from "next/navigation";
 import { db } from "@/db";
 import { userTable } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { formState } from "../signup/actions";
 
-export async function login(formData: FormData) {
+export async function loginAction(prevState: formState, formData: FormData) {
   const username = formData.get("username");
   if (
     typeof username !== "string" ||
@@ -57,7 +58,7 @@ export async function login(formData: FormData) {
   cookies().set(
     sessionCookie.name,
     sessionCookie.value,
-    sessionCookie.attributes
+    sessionCookie.attributes,
   );
   return redirect("/");
 }

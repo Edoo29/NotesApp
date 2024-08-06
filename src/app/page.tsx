@@ -1,3 +1,11 @@
+import Navbar from "@/components/layout/navbar";
+import Sidebar from "@/components/layout/sidebar";
+
 export default function Home() {
-  return <p>Hello, World!</p>;
+  return (
+    <>
+      <Navbar />
+      <Sidebar />
+    </>
+  );
 }

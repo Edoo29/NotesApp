@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { validateRequest } from "@/lib/validate-requests";
 
-export async function logout() {
+export async function logoutAction() {
   const { session } = await validateRequest();
   if (!session) {
     return {
