@@ -8,8 +8,15 @@ export const userTable = sqliteTable("user", {
 
 export const sessionTable = sqliteTable("session", {
   id: text("id").notNull().primaryKey(),
-  userId: text("user_id")
-    .notNull()
-    .references(() => userTable.id),
+  userId: text("user_id").notNull().references(() => userTable.id),
   expiresAt: integer("expires_at").notNull(),
 });
+
+export const notesTable = sqliteTable("notes", {
+  id: text("id").notNull().primaryKey(),
+  userId: text("user_id").notNull().references(() => userTable.id),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  content: text("content").notNull(),
+  created_at: text("created_at").notNull()
+})

@@ -1,11 +1,13 @@
 import Navbar from "@/components/layout/navbar";
-import Sidebar from "@/components/layout/sidebar";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Sidebar />
+      <main className="flex justify-center items-center flex-col mt-64">
+        <p className="font-bold text-2xl">Notes App</p>
+        <p>Create, edit or delete notes!</p>
+      </main>
     </>
   );
 }
